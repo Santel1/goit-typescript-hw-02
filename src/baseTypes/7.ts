@@ -13,26 +13,14 @@ enum WeekDays {
   SUNDAY,
   }
   
-  let isWeekend: (day: WeekDays) => void;
+
+
+let isWeekend: (day: WeekDays) => boolean;
+
+isWeekend = (day: WeekDays) => {
+  return day === WeekDays.SATURDAY || day === WeekDays.SUNDAY;
+};
+
   
-  isWeekend = (day: WeekDays) => {
-    if (day === WeekDays.SATURDAY || day === WeekDays.SUNDAY) {
-      return weekend(true);
-    } else {
-      return weekend(false);
-      
-    }
-  };
-  
-  let weekend: (isWeekend: boolean) => void; 
-  
-  weekend = (isWeekend: boolean) => {
-    if (isWeekend === true) {
-      console.log('Weekend')
-  
-    } else {
-      console.log('Work day')
-    }
-  };
   
   isWeekend(WeekDays.MONDAY);
